@@ -8,7 +8,6 @@ Our to-do application will offer the following functionalities:
 
 - **Adding New Tasks**: Users can create new tasks by entering a description in an input field and submitting it.
 - **Viewing Tasks**: A list will display all existing tasks retrieved from the database.
-- **Marking Tasks as Complete**: Users can mark tasks as completed, potentially changing their appearance on the list (e.g., strikethrough text).
 - **Editing Tasks**: Users can edit the description of existing tasks to modify their content.
 - **Deleting Tasks**: Users can remove unwanted tasks from the list.
 
@@ -31,11 +30,6 @@ Here's a breakdown of how users will interact with the to-do application, incorp
 - **Viewing Tasks**:
   - The application will display a list of all existing tasks retrieved from the database.
   - Each task might be visually differentiated based on its completion status (e.g., strikethrough text for completed).
-
-- **Marking Tasks as Complete**:
-  - Users will have an option to mark a task as complete, potentially by clicking a checkbox or button next to each task.
-  - Clicking the "Mark Complete" option will send a request to the server, updating the specific task's completion status in the database.
-  - The application will then update the task list on the frontend to reflect the change (e.g., visually indicating completion).
 
 - **Editing Tasks**:
   - Users will have an option to edit a task's description. This could involve clicking an "Edit" button next to the task.
@@ -62,7 +56,6 @@ We'll use Express.js and Node.js to create the server-side code that can handle 
 
 - **Adding Tasks**: The server will receive new task data from the frontend and store it in the MongoDB database.
 - **Viewing Tasks**: The server will retrieve all task data from the MongoDB database and send it to the frontend for display.
-- **Marking Tasks as Complete**: The server will update the completion status of a specific task in the database upon receiving a request from the frontend. It will then send confirmation back to the frontend to update the task list visually.
 - **Editing Tasks**: The server will receive updated task information (edited description) from the frontend, update the corresponding task data in the database, and send confirmation back to the frontend. The frontend will then reflect the changes in the task list.
 - **Deleting Tasks**: The server will remove the specified task from the MongoDB database upon receiving a deletion request from the frontend. It will then send confirmation to the frontend, prompting the application to remove the task from the displayed list.
 
@@ -71,7 +64,6 @@ We'll use React.js to build the user interface for our to-do application. This w
 
 - **Input Field**: Users can enter new task descriptions here.
 - **Task List**: This component will display a list of all tasks retrieved from the database, potentially with visual differentiation for completed tasks.
-- **Buttons or Checks for Marking Complete**: Users can click these to mark tasks as completed, sending a request to the server for updating the database.
 - **Edit Functionality**: This might involve a button next to each task that opens a modal window allowing users to modify the description. Upon saving changes, a request is sent to the server to update the database.
 - **Delete Button**: Clicking this button next to a task will trigger a confirmation prompt. Upon confirmation, a request is sent to the server for deletion, and the frontend reflects the change by removing the task from the list.
 
